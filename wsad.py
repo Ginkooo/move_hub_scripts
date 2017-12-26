@@ -22,7 +22,7 @@ def on_press(key):
             'w': partial(hub.motor_AB.timed, 0.4),
             'a': partial(hub.motor_B.timed, 0.4),
             'd': partial(hub.motor_A.timed, 0.4),
-            's': partial(hub.motor_AB.timed, 0.4, -1)
+            's': partial(hub.motor_AB.timed, 0.4, -1),
             }
     try:
         moves[key.char]()
