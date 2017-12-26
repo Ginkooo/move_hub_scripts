@@ -1,3 +1,5 @@
+#!/bin/env python2
+
 import pylgbst
 from time import sleep
 from pynput import keyboard
@@ -17,10 +19,10 @@ def on_press(key):
         print('ESC!\tAborting...')
         raise StopIteration()
     moves = {
-            'w': partial(hub.motor_AB.timed, 1, 0.5),
-            'a': partial(hub.motor_B.timed, 1, 0.5),
-            'd': partial(hub.motor_A.timed, 1, 0.5),
-            's': partial(hub.motor_AB.timed, -1, 0.5)
+            'w': partial(hub.motor_AB.timed, 0.4),
+            'a': partial(hub.motor_B.timed, 0.4),
+            'd': partial(hub.motor_A.timed, 0.4),
+            's': partial(hub.motor_AB.timed, 0.4, -1)
             }
     try:
         moves[key.char]()
@@ -37,6 +39,4 @@ try:
             ) as listener:
         listener.join()
 except StopIteration:
-    pass
-while True:
     pass
